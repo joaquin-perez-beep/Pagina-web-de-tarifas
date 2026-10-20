@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Tarifario MM | Diseño multimedia</title>
+</head>
+<body>
+  <div class="page-layout">
+    <aside class="sidebar">
+      <div class="tarjeta-cotizacion">
+        <span class="cotizacion-etiqueta">Herramienta externa</span>
+        <h2>Plantilla de cotización</h2>
+        <div class="contenido">
+          <p>Creá cotizaciones y estimados en línea de forma fácil y rápida.</p>
+          <a href="https://www.briskinvoicing.com/es/quotes.html?kw=plantilla%20presupuesto&m=&d=c&c=690684465321&ag=159617553995&gad_source=5&gad_campaignid=21018416834&gclid=CjwKCAjwotzWBhBFEiwA1JhPoDEGUqNQp-wK9GOgMEzFoXLjj85J9pG9RLFQzsINkojv81GQQkStoRoCjZEQAvD_BwE"
+             class="boton-flecha" target="_blank" rel="noopener noreferrer" aria-label="Abrir plantilla de cotización">↗</a>
+        </div>
+        <div class="pie-tarjeta">
+          <span class="icono-info">ⓘ</span>
+          <span class="marca">Brisk Invoicing</span>
+        </div>
+      </div>
+    </aside>
+
+    <div class="site-content">
+    <header>
+    <div class="marca">TARIFARIO<span>.</span>MM</div>
+    <nav aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#criterios">Criterios</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <div class="eyebrow">Diseño multimedia · Mendoza, Argentina</div>
+    <h1>Ideas claras.<br>Precios transparentes.</h1>
+    <p>Tarifario orientativo de servicios de diseño multimedia. Consultá los alcances, el tiempo estimado y los presupuestos para un perfil en formación y una referencia senior.</p>
+  </section>
+  <main>
+    <section id="servicios">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Listado de servicios</div>
+          <h2>Encontrá tu servicio</h2>
+        </div>
+        <div class="muted">Valores expresados en pesos argentinos (ARS)</div>
+      </div>
+
+      <div class="controls" aria-label="Herramientas para buscar y filtrar servicios">
+        <input id="busqueda" type="search" placeholder="Buscar un servicio..." aria-label="Buscar por nombre o descripción">
+        <select id="categoria" aria-label="Filtrar por categoría">
+          <option value="todos">Todas las categorías</option>
+          <option value="redes">Diseño para redes</option>
+          <option value="animacion">Animación</option>
+          <option value="interfaces">Diseño de interfaces</option>
+        </select>
+        <select id="nivel" aria-label="Elegir nivel de tarifa">
+          <option value="ambos">Comparar junior y senior</option>
+          <option value="junior">Mostrar presupuesto junior</option>
+          <option value="senior">Mostrar presupuesto senior</option>
+        </select>
+      </div>
+
+      <div class="results-line">
+        <span id="contador" aria-live="polite">3 servicios</span>
+        <span>Los presupuestos se calculan según las horas estimadas.</span>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Servicio y alcance</th>
+              <th>Tiempo estimado</th>
+              <th>Tarifa junior / hora</th>
+              <th>Tarifa senior / hora</th>
+              <th>Presupuesto junior</th>
+              <th>Presupuesto senior</th>
+            </tr>
+          </thead>
+          <tbody id="lista-servicios"></tbody>
+        </table>
+        <div id="sin-resultados" class="empty" hidden>No encontramos servicios con esos criterios. Probá otra búsqueda o categoría.</div>
+      </div>
+
+      <div class="note">
+        <strong>Importante:</strong> estos valores son estimaciones orientativas para proyectos de alcance limitado, elaboradas para el trabajo práctico en octubre de 2026. No constituyen tarifas oficiales ni una cotización definitiva. El presupuesto puede variar según la complejidad, las revisiones y los requisitos del cliente.
+      </div>
+    </section>
+
+    <section class="method" id="criterios">
+      <div class="method-card">
+        <div class="eyebrow">Cómo leer este tarifario</div>
+        <h3>Una base para presupuestar con claridad.</h3>
+        <p>El presupuesto estimado se obtiene multiplicando las horas previstas por la tarifa por hora. Antes de confirmar un trabajo, conviene acordar el alcance, los plazos y cuántas rondas de correcciones incluye.</p>
+      </div>
+      <div class="criteria">
+        <div class="criterion"><strong>Experiencia</strong><span class="muted">La tarifa junior representa un perfil en formación; la senior es una referencia comparativa.</span></div>
+        <div class="criterion"><strong>Complejidad</strong><span class="muted">La cantidad de elementos, pantallas, movimientos o ajustes puede cambiar el tiempo necesario.</span></div>
+        <div class="criterion"><strong>Actualización</strong><span class="muted">Los importes en pesos argentinos deben revisarse periódicamente según el mercado.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Tarifario<span>.</span>MM</strong> · Trabajo Práctico 2 · Diseño multimedia · 2026
+  </footer>
+    </div>
+  </div>
+  <script>
+    // Datos basados en la propuesta del tarifario de la Parte 1.
+    const servicios = [
+      {
+        nombre: "Diseño para redes sociales",
+        descripcion: "Diseño de una publicación estática para una marca, incluyendo composición visual y una ronda de ajustes.",
+        categoria: "redes",
+        categoriaTexto: "Redes sociales",
+        horas: 3,
+        juniorHora: 15000,
+        seniorHora: 35000
+      },
+      {
+        nombre: "Animación y motion graphics en After Effects",
+        descripcion: "Animación breve de textos, logotipos o elementos gráficos de entre 10 y 15 segundos.",
+        categoria: "animacion",
+        categoriaTexto: "Animación",
+        horas: 8,
+        juniorHora: 15000,
+        seniorHora: 35000
+      },
+      {
+        nombre: "Diseño de interfaces y prototipos en Figma",
+        descripcion: "Diseño de una landing page sencilla y creación de un prototipo navegable con interacciones básicas.",
+        categoria: "interfaces",
+        categoriaTexto: "Diseño de interfaces",
+        horas: 16,
+        juniorHora: 15000,
+        seniorHora: 35000
+      }
+    ];
+
+    const formatoPrecio = valor => valor.toLocaleString("es-AR", {
+      style: "currency", currency: "ARS", maximumFractionDigits: 0
+    });
+
+    const busqueda = document.getElementById("busqueda");
+    const categoria = document.getElementById("categoria");
+    const nivel = document.getElementById("nivel");
+    const lista = document.getElementById("lista-servicios");
+    const contador = document.getElementById("contador");
+    const sinResultados = document.getElementById("sin-resultados");
+
+    function renderizarServicios() {
+      const texto = busqueda.value.trim().toLocaleLowerCase("es");
+      const categoriaElegida = categoria.value;
+      const nivelElegido = nivel.value;
+
+      const filtrados = servicios.filter(servicio => {
+        const coincideTexto = (servicio.nombre + " " + servicio.descripcion + " " + servicio.categoriaTexto)
+          .toLocaleLowerCase("es").includes(texto);
+        const coincideCategoria = categoriaElegida === "todos" || servicio.categoria === categoriaElegida;
+        return coincideTexto && coincideCategoria;
+      });
+
+      lista.innerHTML = filtrados.map(servicio => {
+        const presupuestoJunior = servicio.horas * servicio.juniorHora;
+        const presupuestoSenior = servicio.horas * servicio.seniorHora;
+        const junior = `<td class="price">${formatoPrecio(servicio.juniorHora)}</td>`;
+        const senior = `<td class="price">${formatoPrecio(servicio.seniorHora)}</td>`;
+        const totalJunior = `<td class="price">${formatoPrecio(presupuestoJunior)}</td>`;
+        const totalSenior = `<td class="price">${formatoPrecio(presupuestoSenior)}</td>`;
+
+        let columnasTarifa = junior + senior + totalJunior + totalSenior;
+        if (nivelElegido === "junior") {
+          columnasTarifa = junior + `<td>—</td>` + totalJunior + `<td>—</td>`;
+        } else if (nivelElegido === "senior") {
+          columnasTarifa = `<td>—</td>` + senior + `<td>—</td>` + totalSenior;
+        }
+
+        return `<tr>
+          <td><div class="service-name">${servicio.nombre}</div>
+            <div class="description">${servicio.descripcion}</div>
+            <span class="tag">${servicio.categoriaTexto}</span>
+          </td>
+          <td>${servicio.horas} ${servicio.horas === 1 ? "hora" : "horas"}</td>
+          ${columnasTarifa}
+        </tr>`;
+      }).join("");
+
+      contador.textContent = `${filtrados.length} ${filtrados.length === 1 ? "servicio encontrado" : "servicios encontrados"}`;
+      sinResultados.hidden = filtrados.length !== 0;
+    }
+
+    busqueda.addEventListener("input", renderizarServicios);
+    categoria.addEventListener("change", renderizarServicios);
+    nivel.addEventListener("change", renderizarServicios);
+    renderizarServicios();
+  </script>
+</body>
+</html>
